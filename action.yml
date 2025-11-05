@@ -39,4 +39,4 @@ runs:
         OPENAI_API_KEY: ${{ env.OPENAI_API_KEY }}
       run: |
         npm i -g axios
-        node ai_review.js "$BASE" "$HEAD"
+        node ${{ github.action_path }}/ai_review.js "$BASE" "$HEAD"
