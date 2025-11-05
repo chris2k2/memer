@@ -12,8 +12,24 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.rp.outputs.release_created }}
+      tag_name: ${{ steps.rp.outputs.tag_name }}
     steps:
       - name: Release Please
         uses: googleapis/release-please-action@v4
         with:
           release-type: simple
+
+  move-major:
+    needs: release
+    if: ${{ needs.release.outputs.release_created == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Move v1 to latest tag
+        run: |
+          git fetch --tags --force
+          git tag -f v1 "${{ needs.release.outputs.tag_name }}"
+          git push -f origin v1
