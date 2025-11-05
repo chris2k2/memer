@@ -1,11 +1,11 @@
 name: "memer"
 description: "roasts your commit by using a meme"
+branding:
+  icon: "star"
+  colo: "purple"
+
 runs:
   using: "composite"
-
-  branding:
-    icon: "image"
-    color: blue
 
   steps:
     - uses: actions/checkout@v4
