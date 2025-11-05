@@ -1,0 +1,42 @@
+name: "memer"
+description: "roasts your commit by using a meme"
+runs:
+  using: "composite"
+
+  branding:
+    icon: "image"
+    color: blue
+
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Get changed files
+      id: diff
+      shell: bash
+      run: |
+        # YAML-time → Shell-Variablen festlegen
+        BASE="${{ github.event.before }}"
+        HEAD="${{ github.sha }}"
+
+        # Optional: für Folge-Steps persistieren
+        echo "BASE=$BASE" >> "$GITHUB_ENV"
+        echo "HEAD=$HEAD" >> "$GITHUB_ENV"
+
+        git diff --name-only "$BASE" "$HEAD" > changed.txt
+        echo "changed=$(tr '\n' ' ' < changed.txt)" >> "$GITHUB_OUTPUT"
+
+    - name: Install Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+
+    - name: Run OpenAI review
+      shell: bash
+      env:
+        # kommt vom aufrufenden Workflow (siehe unten)
+        OPENAI_API_KEY: ${{ env.OPENAI_API_KEY }}
+      run: |
+        npm i -g axios
+        node ai_review.js "$BASE" "$HEAD"
