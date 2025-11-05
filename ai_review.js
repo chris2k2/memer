@@ -59,9 +59,10 @@ WICHTIG:
 
 Bewerte den Commit anschließend als Meme, nutze dafür folgenden Service: https://api.memegen.link/images/$templateName/$top/$bottom.png. 
 Überlege dir ein passendes Template. In Klammern sind Erklärungen:
-  "drake","distracted-boyfriend","success","doge","gru","mordor" (one does not simply walk into mordor),"change-my-mind"
-  und passenden top und bottom Text. Denke an korrekte URL Encodierung. Poste das Bild zu dem Meme mit einer humoristischen Bemerkung direkt drunter. Sei kreativ und wenn notwendig roaste ruhig den Ersteller des Commits.
-  Binde das Bild als Markdown Bild im Format "![Image](external URL)" ein, damit ich es im Markdown direkt angezigt bekomme
+  "drake","distracted-boyfriend","success","doge","gru","mordor","change-my-mind"
+  und passenden top und bottom Text. Denke an korrekte URL Encodierung. Poste das Bild zu dem Meme mit einer humoristischen Bemerkung direkt drunter. 
+  Sei kreativ und roaste den Comitter ruhig, wenn angebracht. Prüfe, dass du das Meme korrekt verwendest.
+  Binde das Bild als Markdown Bild im Format "![Image](external URL)" ein, damit ich es im Markdown direkt angezigt bekomme.
 
 `.trim();
 
