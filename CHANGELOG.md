@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/chris2k2/memer/compare/v1.0.3...v1.0.4) (2025-11-05)
+
+
+### Bug Fixes
+
+* fixed Pipeline ([ea7163f](https://github.com/chris2k2/memer/commit/ea7163fe793eb67953c7ea41f29fc5d5b4fd4fb4))
+
 ## [1.0.3](https://github.com/chris2k2/memer/compare/v1.0.2...v1.0.3) (2025-11-05)
 
 
