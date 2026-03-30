@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/chris2k2/memer/compare/v1.0.4...v1.0.5) (2026-03-30)
+
+
+### Bug Fixes
+
+* created release ([67896c9](https://github.com/chris2k2/memer/commit/67896c9895885c04e94075685542bf4485cb5228))
+
 ## [1.0.4](https://github.com/chris2k2/memer/compare/v1.0.3...v1.0.4) (2025-11-05)
 
 
